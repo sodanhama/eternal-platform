@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciqnlaiguyqqq"]
+
+[ext_resource type="Script" uid="uid://dcwbk2mjkvps0" path="res://hud.gd" id="1_8sq4i"]
+[ext_resource type="Texture2D" uid="uid://b2hm3ep5h8nug" path="res://assets/images/coin.png" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://c5b8l5dypfkww" path="res://assets/fonts/Manrope-VariableFont_wght.ttf" id="2_64ctp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2snw"]
+bg_color = Color(0, 0, 0, 0.388235)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_8sq4i")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 27.0
+offset_top = 24.0
+offset_right = 199.0
+offset_bottom = 76.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n2snw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 36.0
+offset_top = 21.0
+offset_right = 91.0
+offset_bottom = 76.0
+texture = ExtResource("1_37p78")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 29.0
+offset_right = 140.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0.7742, 0.79, 0.632, 1)
+theme_override_fonts/font = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 25
+text = "x"
+
+[node name="CoinsLabel" type="Label" parent="."]
+offset_left = 122.0
+offset_top = 28.0
+offset_right = 177.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_64ctp")
+theme_override_font_sizes/font_size = 30
+text = "##"

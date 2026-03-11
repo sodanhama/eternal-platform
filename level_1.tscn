@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dekn6grfgbmb4"]
+[gd_scene load_steps=9 format=3 uid="uid://dekn6grfgbmb4"]
 
 [ext_resource type="PackedScene" uid="uid://c7btqh51gatky" path="res://block.tscn" id="1_3hls8"]
+[ext_resource type="Script" uid="uid://dquktewym172v" path="res://level_1.gd" id="1_5hph3"]
 [ext_resource type="PackedScene" uid="uid://b1lypmuq0bsu7" path="res://player.tscn" id="1_hbghi"]
 [ext_resource type="Environment" uid="uid://f5aln4ewegfw" path="res://resources/level_1_environment.tres" id="4_ihfcg"]
 [ext_resource type="MeshLibrary" uid="uid://bllpgleaiqw68" path="res://resources/world-blocks-v1.tres" id="5_5hph3"]
 [ext_resource type="PackedScene" uid="uid://bucr5f7n5hfp3" path="res://coin.tscn" id="5_rka8t"]
+[ext_resource type="PackedScene" uid="uid://ciqnlaiguyqqq" path="res://hud.tscn" id="7_j7kpp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rka8t"]
 size = Vector3(247.995, 4.78027, 287.944)
 
 [node name="Level1" type="Node3D"]
+script = ExtResource("1_5hph3")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.681539, 0.731782, 0, -0.731782, 0.681539, 0, 4.1093, 1.37663)
@@ -55,13 +58,18 @@ shape = SubResource("BoxShape3D_rka8t")
 
 [node name="Coins" type="Node3D" parent="."]
 
-[node name="Coin1" parent="Coins" instance=ExtResource("5_rka8t")]
+[node name="Coin1" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 7.16738, 1.07476, -8.3958)
+hud = NodePath("../../HUD")
 
-[node name="Coin2" parent="Coins" instance=ExtResource("5_rka8t")]
+[node name="Coin2" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1.16738, 1.07476, -8.3958)
+hud = NodePath("../../HUD")
 
-[node name="Coin3" parent="Coins" instance=ExtResource("5_rka8t")]
+[node name="Coin3" parent="Coins" node_paths=PackedStringArray("hud") instance=ExtResource("5_rka8t")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -6.83262, 1.07476, -8.3958)
+hud = NodePath("../../HUD")
+
+[node name="HUD" parent="." instance=ExtResource("7_j7kpp")]
 
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]
