@@ -2,10 +2,12 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 10
 
 
 func _physics_process(delta: float) -> void:
+	
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -26,3 +28,5 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+	#Mak	e camera controller match the position of myself
+	$Camera_Controller.position = lerp($Camera_Controller.position,position,0.1)
