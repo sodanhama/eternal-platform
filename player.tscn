@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_4flbx")
 [sub_resource type="BoxShape3D" id="BoxShape3D_4flbx"]
 
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 30
 script = ExtResource("1_4flbx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -35,3 +36,4 @@ transform = Transform3D(1, 0, 0, 0, 0.937026, 0.349259, 0, -0.349259, 0.937026, 
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+collision_mask = 2
