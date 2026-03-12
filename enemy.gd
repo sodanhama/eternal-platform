@@ -4,6 +4,7 @@ extends CharacterBody3D
 var	 speed = 2
 
 @export var direction := Vector3(1,0,0)
+@export var turns_around_at_edges := true
 var turning := false
 
 func _physics_process(delta: float) -> void:
@@ -20,7 +21,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall() and not turning:
 		turn_around()
 		
-	if not $RayCast3D.is_colliding() and is_on_floor() and not turning:
+	if not $RayCast3D.is_colliding() and is_on_floor() and not turning and turns_around_at_edges:
 		turn_around()
 	
 		
