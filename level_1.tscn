@@ -78,4 +78,11 @@ hud = NodePath("../../HUD")
 [node name="Enemy1" parent="Enemies" instance=ExtResource("8_bjebc")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1, -7)
 
+[node name="Enemy2" parent="Enemies" instance=ExtResource("8_bjebc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 1, -3.31476)
+direction = Vector3(-1, 0, 0)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("8_bjebc")]
+transform = Transform3D(4.37114e-08, 0, -1, 0, 1, 0, 1, 0, 4.37114e-08, 18.688, 3.35227, -8.58158)
+
 [connection signal="body_entered" from="FallZone" to="Player" method="_on_fall_zone_body_entered"]

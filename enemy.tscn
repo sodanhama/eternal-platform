@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bt2iqinlsqfgw"]
+[gd_scene load_steps=14 format=4 uid="uid://bt2iqinlsqfgw"]
 
 [ext_resource type="Script" uid="uid://co5akdn0nv4ts" path="res://enemy.gd" id="1_7k104"]
 
@@ -97,6 +97,7 @@ bind/1/pose = Transform3D(1, 6.95617e-08, 2.28045e-07, -7.10543e-15, 0.956491, -
 [sub_resource type="Animation" id="Animation_iixeu"]
 resource_name = "blob"
 length = 0.833333
+loop_mode = 1
 tracks/0/type = "scale_3d"
 tracks/0/imported = true
 tracks/0/enabled = true
@@ -167,6 +168,14 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_7xaro"]
 radius = 0.453761
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7k104"]
+height = 0.396851
+radius = 0.576172
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4gyqm"]
+height = 0.318787
+radius = 0.436523
+
 [node name="Enemy" type="CharacterBody3D"]
 collision_layer = 8
 collision_mask = 2
@@ -176,20 +185,21 @@ script = ExtResource("1_7k104")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.4, 0)
 
 [node name="Skeleton3D" type="Skeleton3D" parent="Armature"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 bones/0/name = "BodyBone"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 bones/0/enabled = true
 bones/0/position = Vector3(0, 0, 0)
 bones/0/rotation = Quaternion(0, 0, 0, 1)
-bones/0/scale = Vector3(1, 1, 1)
+bones/0/scale = Vector3(1.08119, 0.894347, 1.08119)
 bones/1/name = "FaceBone"
 bones/1/parent = 0
 bones/1/rest = Transform3D(1, -7.10543e-15, -2.38419e-07, 6.95617e-08, 0.956491, 0.291763, 2.28045e-07, -0.291763, 0.956491, 0, 1.2925, 0.862106)
 bones/1/enabled = true
-bones/1/position = Vector3(0, 1.2925, 0.862106)
-bones/1/rotation = Quaternion(-0.147495, -1.17905e-07, 1.75827e-08, 0.989063)
-bones/1/scale = Vector3(1, 1, 1)
+bones/1/position = Vector3(1.86265e-09, 1.31636, 0.926689)
+bones/1/rotation = Quaternion(-0.166546, -1.17583e-07, 2.06146e-08, 0.986034)
+bones/1/scale = Vector3(0.924997, 1.09947, 0.947489)
 
 [node name="Cube" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_7xaro")
@@ -199,7 +209,30 @@ skin = SubResource("Skin_7k104")
 libraries = {
 &"": SubResource("AnimationLibrary_ojgvu")
 }
+autoplay = "blob"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("SphereShape3D_7xaro")
+
+[node name="SidesChecker" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SidesChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0936865, 0)
+shape = SubResource("CylinderShape3D_7k104")
+
+[node name="TopChecker" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475309, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TopChecker"]
+shape = SubResource("CylinderShape3D_4gyqm")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0849501, -0.607635)
+target_position = Vector3(0, -0.3, 0)
+collision_mask = 2
+
+[connection signal="body_entered" from="SidesChecker" to="." method="_on_sides_checker_body_entered"]
+[connection signal="body_entered" from="TopChecker" to="." method="_on_top_checker_body_entered"]
