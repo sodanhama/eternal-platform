@@ -18,9 +18,10 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	Global.coins+=1	
+	SoundManager.play_coin_sound()
 	hud.get_node("CoinsLabel").text = str(Global.coins)
 	if Global.coins >= Global.NUM_COINS_TO_WIN:
-		get_tree().change_scene_to_file("res://level_1.tscn")
+		get_tree().change_scene_to_file("res://menu_won.tscn")
 	set_collision_layer_value(3,false)
 	set_collision_mask_value(1,false)
 	$AnimationPlayer.play('bounce')

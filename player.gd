@@ -36,10 +36,8 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		$SoundJump.play()
 		velocity.y = JUMP_VELOCITY
-
-
-	
 
 	#Move camera	
 	var direction : Vector3 = ($Camera_Controller.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -79,7 +77,8 @@ func align_with_floor(floor_normal):
 
 
 func _on_fall_zone_body_entered(body: Node3D) -> void:
-	get_tree().change_scene_to_file('res://level_1.tscn')
+	SoundManager.play_fall_sound()
+	get_tree().change_scene_to_file('res://menu_game_over.tscn')
 
 func bounce():
 	velocity.y = JUMP_VELOCITY*0.7

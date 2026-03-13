@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://bt2iqinlsqfgw"]
+[gd_scene load_steps=15 format=4 uid="uid://bt2iqinlsqfgw"]
 
 [ext_resource type="Script" uid="uid://co5akdn0nv4ts" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="AudioStream" uid="uid://bjjg20j17kgk7" path="res://assets/SoundEffects/squash-jump2.ogg" id="2_4gyqm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0x6m"]
 resource_name = "Material"
@@ -233,6 +234,10 @@ shape = SubResource("CylinderShape3D_4gyqm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0849501, -0.607635)
 target_position = Vector3(0, -0.3, 0)
 collision_mask = 2
+
+[node name="SoundSquash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4gyqm")
+volume_db = -15.0
 
 [connection signal="body_entered" from="SidesChecker" to="." method="_on_sides_checker_body_entered"]
 [connection signal="body_entered" from="TopChecker" to="." method="_on_top_checker_body_entered"]

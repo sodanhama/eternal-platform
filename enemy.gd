@@ -39,11 +39,13 @@ func turn_around():
 
 
 func _on_sides_checker_body_entered(body: Node3D) -> void:
-	get_tree().change_scene_to_file("res://level_1.tscn")
+	SoundManager.play_enemy_sound()
+	get_tree().change_scene_to_file("res://menu_game_over.tscn")
 
 
 func _on_top_checker_body_entered(body: Node3D) -> void:
 	$AnimationPlayer.play("squash")
+	$SoundSquash.play()
 	body.bounce()
 	$SidesChecker.set_collision_mask_value(1,false)
 	$TopChecker.set_collision_mask_value(1,false)
