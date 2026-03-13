@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6uyi3xnp3cn8"]
+
+[ext_resource type="Script" uid="uid://djl8qeajd50ag" path="res://menu_won.gd" id="1_dgtsr"]
+[ext_resource type="FontFile" uid="uid://c5b8l5dypfkww" path="res://assets/fonts/Manrope-VariableFont_wght.ttf" id="1_kio6b"]
+
+[node name="MenuWon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dgtsr")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -30.0
+offset_right = 1191.0
+offset_bottom = 666.0
+color = Color(0.188235, 0.184314, 0.196078, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 303.0
+offset_top = 54.0
+offset_right = 815.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(0.789289, 0.896334, 0.831816, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_kio6b")
+theme_override_font_sizes/font_size = 130
+text = "You won!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 290.0
+offset_right = 821.0
+offset_bottom = 444.0
+theme_override_fonts/font = ExtResource("1_kio6b")
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://hqhja0yq0ttq"]
+
+[ext_resource type="Script" uid="uid://c61rkq1r6teb2" path="res://menu_game_over.gd" id="1_jfflx"]
+[ext_resource type="FontFile" uid="uid://c5b8l5dypfkww" path="res://assets/fonts/Manrope-VariableFont_wght.ttf" id="1_qpg8w"]
+
+[node name="MenuGameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_jfflx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -117.0
+offset_top = -49.0
+offset_right = 1272.0
+offset_bottom = 704.0
+color = Color(0.188235, 0.184314, 0.196078, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 236.0
+offset_top = 56.0
+offset_right = 888.0
+offset_bottom = 234.0
+theme_override_colors/font_color = Color(0.789289, 0.896334, 0.831816, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_qpg8w")
+theme_override_font_sizes/font_size = 130
+text = "Game over!"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 292.0
+offset_right = 793.0
+offset_bottom = 446.0
+theme_override_fonts/font = ExtResource("1_qpg8w")
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

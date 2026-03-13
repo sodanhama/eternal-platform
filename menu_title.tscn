@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjplydte55d5f"]
+
+[ext_resource type="FontFile" uid="uid://c5b8l5dypfkww" path="res://assets/fonts/Manrope-VariableFont_wght.ttf" id="1_a1x2l"]
+[ext_resource type="Script" uid="uid://nadjs70q3880" path="res://menu_title.gd" id="1_n3opb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a1x2l"]
+bg_color = Color(0, 0, 0, 0)
+border_color = Color(0, 0, 0, 0)
+
+[node name="MenuTitle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n3opb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -6.0
+offset_right = 1157.0
+offset_bottom = 653.0
+color = Color(0.187862, 0.185747, 0.195046, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 38.0
+offset_right = 1328.0
+offset_bottom = 216.0
+theme_override_colors/font_color = Color(0.789289, 0.896334, 0.831816, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 9
+theme_override_constants/shadow_outline_size = 13
+theme_override_fonts/font = ExtResource("1_a1x2l")
+theme_override_font_sizes/font_size = 130
+text = "Eternal Platform"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 257.0
+offset_right = 779.0
+offset_bottom = 347.0
+theme_override_colors/font_hover_color = Color(0.0711721, 0.123572, 0.0635492, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.637472, 0.790763, 0.776149, 1)
+theme_override_fonts/font = ExtResource("1_a1x2l")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_a1x2l")
+text = "PLAY"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
