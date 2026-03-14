@@ -20,3 +20,9 @@ func play_menu_music():
 	
 func stop_menu_music():
 	$MusicMenu.stop()
+	
+func play_level_music():
+	$MusicLevel.play()
+	
+func stop_level_music():
+	$MusicLevel.stop()

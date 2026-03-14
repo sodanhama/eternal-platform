@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://hryp0t1urwdy"]
+[gd_scene load_steps=8 format=3 uid="uid://hryp0t1urwdy"]
 
 [ext_resource type="AudioStream" uid="uid://b7jivweee73ox" path="res://assets/SoundEffects/enemy-lose4.ogg" id="1_g5net"]
 [ext_resource type="Script" uid="uid://en87fd14pafk" path="res://sound_manager.gd" id="1_mdjn0"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://lttbcc7pswbx" path="res://assets/SoundEffects/button-maximize_007.ogg" id="4_h8btt"]
 [ext_resource type="AudioStream" uid="uid://cbf6lh4o2negh" path="res://assets/SoundEffects/fall-gameover2.ogg" id="5_7jwsb"]
 [ext_resource type="AudioStream" uid="uid://c8mx5yn1e1p6j" path="res://assets/Music/Menu-RetroMystic.ogg" id="6_7jwsb"]
+[ext_resource type="AudioStream" uid="uid://c4d2tauw5vm3r" path="res://assets/Music/Level-RetroBeat.ogg" id="7_h42hm"]
 
 [node name="SoundManager" type="Control"]
 layout_mode = 3
@@ -33,3 +34,7 @@ volume_db = -15.0
 [node name="MusicMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_7jwsb")
 volume_db = -10.0
+
+[node name="MusicLevel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_h42hm")
+volume_db = -12.0
