@@ -7,3 +7,5 @@ Collect all nine coins to win the game, and avoid the enemies! Or- squash them, 
 Use the W, A, S, and D keys to move the character around while orienting the camera.
 
 The 3D models have not been made by me except the floor tileset.
+
+![Project Screenshot](https://hel1.your-objectstorage.com/hackclub-jackpot-attachments/journal-images/597/ad2b5bd9-2639-42d3-b94d-d94dbec3298f.png)
