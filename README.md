@@ -6,7 +6,7 @@ Collect all nine coins to win the game, and avoid the enemies! Or- squash them, 
 
 Use the W, A, S, and D keys to move the character around while orienting the camera.
 
-I have followed BornCG's video tutorial series to make this project, but I have made significant changes to the player code, gridmap, player and enemy animations, the HUD, the menu, and camera orientation, along with input maps to this project. Additionally, the code called for major modification since I have used the latest version of Godot.
+I have followed BornCG's video tutorial series to make this project, but I have made significant changes to the 3D models, with the coin and the floor tileset models being made independently, player code, gridmap, player and enemy animations, the HUD, the menu, and camera orientation, along with input maps to this project. Additionally, the code called for major modification since I have used the latest version of Godot.
 
 The 3D models have not been made by me but have no attribution required except the floor tileset and the coins, which is made by me.
 
