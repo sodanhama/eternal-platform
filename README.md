@@ -6,7 +6,7 @@ Collect all nine coins to win the game, and avoid the enemies! Or- squash them, 
 
 Use the W, A, S, and D keys to move the character around while orienting the camera.
 
-The 3D models have not been made by me but have no attribution required except the floor tileset, which is made by me.
+The 3D models have not been made by me but have no attribution required except the floor tileset and the coins, which is made by me.
 
 All music and sound effects used are royalty free.
 
