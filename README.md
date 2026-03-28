@@ -4,7 +4,7 @@ This made was created in Godot to help me learn the basics, and features a simpl
 
 Collect all nine coins to win the game, and avoid the enemies! Or- squash them, by jumping on them.
 
-Use the W, A, S, and D keys to move the character around while orienting the camera by moving your mouse. Click on space to jump.
+Use the W, A, S, and D keys to move the character around while orienting the camera while moving left or right (A and D keys). Click on space to jump. I've made the movement system in order to minimise the use of unnecessary keys.
 
 Once you touch any enemy except by jumping on them, you reset.
 
