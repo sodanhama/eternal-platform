@@ -4,7 +4,11 @@ This made was created in Godot to help me learn the basics, and features a simpl
 
 Collect all nine coins to win the game, and avoid the enemies! Or- squash them, by jumping on them.
 
-Use the W, A, S, and D keys to move the character around while orienting the camera.
+Use the W, A, S, and D keys to move the character around while orienting the camera by moving your mouse. Click on space to jump.
+
+Once you touch any enemy except by jumping on them, you reset.
+
+One platform is moving, so be careful!
 
 I have followed BornCG's video tutorial series to make this project, but I have made significant changes to the 3D models, with the coin and the floor tileset models being made independently, player code, gridmap, player and enemy animations, the HUD, the menu, and camera orientation, along with input maps to this project. Additionally, the code called for major modification since I have used the latest version of Godot.
 
