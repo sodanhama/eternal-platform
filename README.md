@@ -18,5 +18,7 @@ The 3D models have not been made by me but have no attribution required except t
 
 All music and sound effects used are royalty free.
 
+Thanks for checking out my game!
+
 Project screenshot:
 ![Project Screenshot](https://hel1.your-objectstorage.com/hackclub-jackpot-attachments/journal-images/597/ad2b5bd9-2639-42d3-b94d-d94dbec3298f.png)
